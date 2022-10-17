@@ -30,3 +30,15 @@ img {
 
   vertical-align: middle;
 }
+
+.container {
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    max-width: map-get($grid-breakpoints, xl);
+    padding: 0 17px;
+  }
+}
