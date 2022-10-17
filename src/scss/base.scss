@@ -21,6 +21,7 @@ body {
 
   min-height: 100%;
 
+  color: $main-color;
   font-family: $font-family;
 }
 
@@ -58,4 +59,23 @@ img {
 
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+h3 {
+  margin: 0;
+
+  color: $title-color;
+  font-weight: 600;
+
 }

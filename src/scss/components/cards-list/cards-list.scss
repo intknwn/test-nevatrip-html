@@ -1,0 +1,13 @@
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 26px;
+
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    gap: 16px;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    flex-flow: column nowrap;
+  }
+}
