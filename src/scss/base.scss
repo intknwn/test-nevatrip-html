@@ -39,7 +39,7 @@ img {
   padding: 0 16px;
 
   @media (min-width: map-get($grid-breakpoints, md)) {
-    max-width: map-get($grid-breakpoints, xl);
+    max-width: map-get($container-max-widths, xl);
     padding: 0 17px;
   }
 }

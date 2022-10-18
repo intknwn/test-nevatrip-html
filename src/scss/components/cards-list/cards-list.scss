@@ -9,5 +9,6 @@
 
   @media (min-width: map-get($grid-breakpoints, lg)) {
     flex-flow: column nowrap;
+    padding-top: 67px;
   }
 }
