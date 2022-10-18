@@ -1,3 +1,4 @@
+/* stylelint-disable selector-class-pattern */
 .card {
   position: relative;
 
@@ -204,11 +205,15 @@
   }
 
   &__times-wrapper {
+    position: relative;
+
     display: flex;
     flex-wrap: wrap;
     padding-top: 13px;
 
     @media (min-width: map-get($grid-breakpoints, lg)) {
+      position: static;
+
       display: inline;
       margin-left: 8px;
       padding-top: 0;
@@ -344,4 +349,8 @@
       background-color: $button-border-color;
     }
   }
+}
+
+button.card__time {
+  border: none;
 }
