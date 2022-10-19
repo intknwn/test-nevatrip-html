@@ -8,13 +8,11 @@ html(lang="ru")
   head
     include ../blocks/head.pug
   body(class=bodyClass)
-    block header
-      include ../blocks/header.pug
+    .container
+      block header
+        include ../blocks/header.pug
 
-    block content
+      block content
 
-    block footer
-      include ../blocks/footer.pug
-
-    block scripts
-      script(src="scripts/bundle.js?v=" + siteVersion)
+      block scripts
+        script(src="scripts/bundle.js?v=" + siteVersion)

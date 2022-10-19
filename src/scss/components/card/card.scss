@@ -1,0 +1,357 @@
+/* stylelint-disable selector-class-pattern */
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+
+  margin-bottom: 30px;
+
+  overflow: hidden;
+
+  border: 0.3px solid $border-color;
+  border-radius: 16px;
+
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    max-width: calc(50% - 8px);
+  }
+
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    flex: 1 0 100%;
+    flex-flow: row nowrap;
+    max-width: 100%;
+
+    margin-bottom: 45px;
+  }
+
+  &--new,
+  &--new-corner,
+  &--all-year {
+    &::before {
+      position: absolute;
+      top: 40px;
+      left: 0;
+
+      width: 99px;
+      height: 35px;
+
+      color: $white-color;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 35px;
+
+      text-align: center;
+      text-transform: uppercase;
+
+      background-color: $new-bg-color;
+
+      content: "Новинка";
+
+      @media (min-width: map-get($grid-breakpoints, lg)) {
+        top: 46px;
+
+        width: 154px;
+        height: 42px;
+
+        font-size: 16px;
+        line-height: 42px;
+      }
+    }
+  }
+
+  &--all-year {
+    &::before {
+      width: 150px;
+      height: 35px;
+
+      color: $all-year-color;
+      line-height: 35px;
+
+      background-color: $all-year-bg-color;
+
+      content: "Круглый год";
+
+      @media (min-width: map-get($grid-breakpoints, lg)) {
+        top: 59px;
+
+        width: 180px;
+        height: 45px;
+
+        line-height: 45px;
+      }
+    }
+  }
+
+  &--new-corner {
+    &::before {
+      top: 0;
+      left: 0;
+
+      width: 129px;
+
+      background-color: $new-corner-bg-color;
+
+      border-bottom-right-radius: 12px;
+    }
+  }
+
+  &__img-wrapper {
+    width: auto;
+    height: 220px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      min-width: 473px;
+      height: auto;
+      min-height: 369px;
+    }
+
+    img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  &__duration {
+    display: flex;
+    align-items: center;
+    order: -1;
+
+    margin-bottom: 12px;
+
+    color: $fade-color;
+    font-size: 12px;
+    line-height: 20px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      order: 0;
+
+      font-size: 14px;
+    }
+
+    svg {
+      margin-right: 9px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    padding: 16px 12px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      padding: 12px 20px 26px;
+    }
+
+    h3 {
+      margin-bottom: 18px;
+
+      font-size: 14px;
+      line-height: 22px;
+
+      @media (min-width: map-get($grid-breakpoints, lg)) {
+        margin-bottom: 14px;
+
+        font-size: 26px;
+        line-height: 34px;
+      }
+    }
+  }
+
+  &__features {
+    margin-bottom: 26px;
+    padding-left: 36px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      margin-bottom: 0;
+      padding-left: 33px;
+    }
+  }
+
+  &__feature {
+    position: relative;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      margin-bottom: 12px;
+
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: -36px;
+
+      content: url("../images/icon-checkmark.svg");
+
+      @media (min-width: map-get($grid-breakpoints, lg)) {
+        left: -31px;
+      }
+    }
+  }
+
+  &__times-wrapper {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 13px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      position: static;
+
+      display: inline;
+      margin-left: 8px;
+      padding-top: 0;
+
+      vertical-align: middle;
+    }
+  }
+
+  &__time {
+    margin-bottom: 4px;
+    padding: 3px 13px;
+
+    color: $time-color;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-decoration: none;
+
+    background-color: $time-bg-color;
+    border-radius: 11px;
+
+    transition: background-color 300ms, color 300ms;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      display: inline-block;
+
+      padding: 4px 15px;
+
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 4px;
+
+      @media (min-width: map-get($grid-breakpoints, lg)) {
+        margin-right: 9px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: white;
+
+      background-color: $time-hover-color;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: auto;
+
+    padding: 0 10px 0 6px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      justify-content: flex-start;
+      padding-bottom: 0;
+    }
+  }
+
+  &__price-wrapper {
+    margin-right: 15px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: flex-start;
+
+    color: $price-color;
+
+    font-size: 30px;
+    line-height: 20px;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      font-size: 36px;
+      line-height: 20px;
+    }
+
+    span {
+      margin-right: 5px;
+    }
+
+    &--secondary {
+      margin-bottom: 0;
+
+      font-size: 10px;
+      line-height: 20px;
+
+
+      @media (min-width: map-get($grid-breakpoints, lg)) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+
+    width: 100%;
+    max-width: 165px;
+
+    padding: 12px 0;
+
+    @media (min-width: map-get($grid-breakpoints, lg)) {
+      max-width: 187px;
+      padding: 16px 0;
+
+      font-size: 18px;
+      line-height: 20px;
+
+      border-radius: 23px;
+    }
+
+    color: $button-color;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    text-decoration: none;
+
+    background-color: $button-bg-color;
+
+    border: 0.5px solid $button-border-color;
+    border-radius: 20px;
+
+    &:hover,
+    &:focus {
+      background-color: $button-border-color;
+    }
+  }
+}
+
+button.card__time {
+  border: none;
+  cursor: pointer;
+}
